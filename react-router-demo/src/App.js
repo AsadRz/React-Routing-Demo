@@ -20,9 +20,15 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Route path='/' exact component={Home} />
-      <Route path='/category' component={Category} />
-      <Route path='/products' component={Products} />
+      <Route path='/' exact>
+        <Home />
+      </Route>
+      <Route path='/category'>
+        <Category />
+      </Route>
+      <Route path='/products'>
+        <Products />
+      </Route>
     </div>
   );
 }
