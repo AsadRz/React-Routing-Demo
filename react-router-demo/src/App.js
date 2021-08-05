@@ -20,15 +20,21 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Route path='/' exact>
-        <Home />
-      </Route>
-      <Route path='/category'>
-        <Category />
-      </Route>
-      <Route path='/products'>
-        <Products />
-      </Route>
+      <Switch>
+        <Route path='/' exact>
+          <Home />
+        </Route>
+        <Route path='/category'>
+          <Category />
+        </Route>
+        <Route path='/products'>
+          <Products />
+        </Route>
+        {/* /:id part is used for dynamic routing */}
+        <Route path='/:id'>
+          <p>This will be rendered for any route other then defined above</p>
+        </Route>
+      </Switch>
     </div>
   );
 }
