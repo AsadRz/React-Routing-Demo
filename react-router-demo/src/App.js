@@ -8,13 +8,11 @@ import Login from './components/Login';
 import PrivateRoute from './PrivateRoute';
 
 function App() {
-  const admin = () => {
-    return (
-      <div>
-        <h3>admin</h3>
-      </div>
-    );
-  };
+  const Admin = () => (
+    <div>
+      <h2>Welcome admin!</h2>
+    </div>
+  );
   return (
     <div className='App'>
       <nav className='navbar navbar-light'>
@@ -46,8 +44,7 @@ function App() {
         <Route path='/login'>
           <Login />
         </Route>
-        <PrivateRoute path='/admin' component={admin} />
-        {/* /:id part is used for dynamic routing */}
+        <PrivateRoute path='/admin' component={Admin} />
       </Switch>
     </div>
   );

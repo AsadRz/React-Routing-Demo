@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 
 const Login = () => {
-  const { state } = useLocation;
+  const { state } = useLocation();
+
   const { from } = state || { from: { pathname: '/' } };
-  const [redirectToRefferer, setRedirectToRefferer] = useState(false);
+  const [redirectToReferrer, setRedirectToReferrer] = useState(false);
 
   const login = () => {
     fakeAuth.authenticate(() => {
-      setRedirectToRefferer(true);
+      setRedirectToReferrer(true);
     });
   };
 
-  if (redirectToRefferer) {
-    <Redirect to={from} />;
+  if (redirectToReferrer) {
+    return <Redirect to={from} />;
   }
   return (
     <div>

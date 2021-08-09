@@ -9,7 +9,6 @@ import Item from './Item';
  */
 
 const Category = () => {
-  console.log(useRouteMatch());
   const { url, path } = useRouteMatch();
   return (
     <div>
