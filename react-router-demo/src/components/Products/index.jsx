@@ -8,7 +8,7 @@ const Products = () => {
   const linkList = productData.map((item) => {
     return (
       <li key={item.id}>
-        <Link to={`${url}/${item.id}`}>{item.name}</Link>
+        <Link to={`${path}/${item.id}`}>{item.name}</Link>
       </li>
     );
   });

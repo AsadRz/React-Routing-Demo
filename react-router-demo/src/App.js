@@ -4,7 +4,17 @@ import Category from './components/Category';
 import Products from './components/Products';
 import Home from './components/Home';
 
+import Login from './components/Login';
+import PrivateRoute from './PrivateRoute';
+
 function App() {
+  const admin = () => {
+    return (
+      <div>
+        <h3>admin</h3>
+      </div>
+    );
+  };
   return (
     <div className='App'>
       <nav className='navbar navbar-light'>
@@ -18,6 +28,9 @@ function App() {
           <li>
             <Link to='/products'>Products</Link>
           </li>
+          <li>
+            <Link to='/admin'>Admin</Link>
+          </li>
         </ul>
       </nav>
       <Switch>
@@ -30,10 +43,11 @@ function App() {
         <Route path='/products'>
           <Products />
         </Route>
-        {/* /:id part is used for dynamic routing */}
-        <Route path='/:id'>
-          <p>This will be rendered for any route other then defined above</p>
+        <Route path='/login'>
+          <Login />
         </Route>
+        <PrivateRoute path='/admin' component={admin} />
+        {/* /:id part is used for dynamic routing */}
       </Switch>
     </div>
   );
